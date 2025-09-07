@@ -2,6 +2,55 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize Lucide icons
   lucide.createIcons();
 
+  // Background music functionality
+  const bgMusic = document.getElementById("bgMusic");
+  let musicStarted = false;
+
+  // Function to start music on user interaction
+  function startMusic() {
+    if (bgMusic && !musicStarted) {
+      bgMusic
+        .play()
+        .then(() => {
+          // Only remove event listeners after successful playback
+          musicStarted = true;
+          document.removeEventListener("click", startMusic);
+          document.removeEventListener("touchstart", startMusic);
+        })
+        .catch((error) => {
+          console.log("Audio playback failed:", error);
+          // Keep event listeners active for retry on subsequent interactions
+
+          // Show visual feedback to user to click the music button
+          const musicControl = document.querySelector(".music-control");
+          if (musicControl) {
+            musicControl.classList.add("needs-interaction");
+            setTimeout(
+              () => musicControl.classList.remove("needs-interaction"),
+              3000
+            );
+          }
+        });
+    }
+  }
+
+  // Add event listeners for user interaction (direct interactions only)
+  document.addEventListener("click", startMusic);
+  document.addEventListener("touchstart", startMusic);
+
+  // Music toggle function
+  window.toggleMusic = function () {
+    if (bgMusic) {
+      if (bgMusic.paused) {
+        bgMusic.play();
+        document.querySelector(".music-control").classList.add("playing");
+      } else {
+        bgMusic.pause();
+        document.querySelector(".music-control").classList.remove("playing");
+      }
+    }
+  };
+
   // Page navigation variables
   let currentPage = 1;
   const totalPages = 9;
@@ -178,7 +227,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "photo/DSC09422-compressed-compressed.jpg",
     "photo/DSC09433-compressed-compressed.jpg",
     "photo/DSC09437-compressed-compressed.jpg",
-    "photo/DSC09439-compressed-compressed.jpg"
+    "photo/DSC09439-compressed-compressed.jpg",
   ];
 
   // Set the first image as main image

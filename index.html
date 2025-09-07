@@ -19,17 +19,15 @@
     <div class="invitation-container">
       <!-- 첫 번째 페이지: 메인 초대장 -->
       <section id="page1" class="page active">
-        <div class="header-names">
-          <span class="bride">이화자</span>
-          <span class="groom">지림호</span>
-        </div>
-        <div class="main-message">우리 결혼합니다</div>
         <div class="main-image-container"></div>
-        <div class="wedding-date">2025.10.26</div>
-        <div class="invitation-text">
-          We who have similar smiles, are getting married.<br />
-          Holding onto each other's clasped hands tightly we promise to live
-          happily ever after.
+        <div class="main-message">우리 결혼합니다</div>
+        <div class="wedding-date-container">
+          <div class="wedding-date">2025.10.26</div>
+          <div class="invitation-text">
+            We who have similar smiles, are getting married.<br />
+            Holding onto each other's clasped hands tightly we promise to live
+            happily ever after.
+          </div>
         </div>
       </section>
 
@@ -243,6 +241,7 @@
           <div class="couple-images">
             <div class="groom-image-container">
               <img src="gen.png" alt="신랑 사진" class="couple-single-image" />
+              <div class="groom-name">지림호</div>
             </div>
             <div class="couple-heart">
               <svg
@@ -260,6 +259,7 @@
             </div>
             <div class="bride-image-container">
               <img src="lady.png" alt="신부 사진" class="couple-single-image" />
+              <div class="bride-name">이화자</div>
             </div>
           </div>
         </div>
@@ -284,6 +284,7 @@
               <div class="calendar-day">토</div>
             </div>
             <div class="calendar-dates">
+              <div class="calendar-date"></div>
               <div class="calendar-date"></div>
               <div class="calendar-date"></div>
               <div class="calendar-date">1</div>
@@ -318,6 +319,7 @@
               <div class="calendar-date">28</div>
               <div class="calendar-date">29</div>
               <div class="calendar-date">30</div>
+              <div class="calendar-date">31</div>
             </div>
           </div>
           <div class="countdown-timer">
@@ -694,5 +696,47 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script src="script.js"></script>
+    <!-- 배경 음악 -->
+    <audio id="bgMusic" loop autoplay>
+      <source src="bg.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- 음악 컨트롤 버튼 -->
+    <div
+      class="music-control"
+      onclick="toggleMusic()"
+      title="클릭하여 음악 재생/일시정지"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M9 18V6L21 3V15"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M18 17a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </div>
   </body>
 </html>
