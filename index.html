@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>지림호 & 이화자 결혼식 초대장</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  </head>
+  <body>
+    <div class="invitation-container">
+      <!-- 첫 번째 페이지: 메인 초대장 -->
+      <section id="page1" class="page active">
+        <div class="header-names">
+          <span class="bride">이화자</span>
+          <span class="groom">지림호</span>
+        </div>
+        <div class="main-message">우리 결혼합니다</div>
+        <div class="main-image-container"></div>
+        <div class="wedding-date">2025.10.26</div>
+        <div class="invitation-text">
+          We who have similar smiles, are getting married.<br />
+          Holding onto each other's clasped hands tightly we promise to live
+          happily ever after.
+        </div>
+      </section>
+
+      <!-- 두 번째 페이지: 시/메시지 -->
+      <section id="page2" class="">
+        <div class="poetry-section">
+          <div class="poetry-icon"><i class="icon-leaf"></i></div>
+          <div class="poetry-text">
+            꽃이 피었다고 너에게 쓰고<br />
+            꽃이 졌다고 너에게 쓴다.<br /><br />
+            너에게 쓴 마음이<br />
+            벌써 길이 되었다.<br /><br />
+            너에게 쓴 마음이<br />
+            벌써 내 일상이 되었다.<br /><br />
+            <div class="poetry-author">천양희 《너에게 쓴다》</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 세 번째 페이지: 사진 갤러리 -->
+      <section id="page3" class="">
+        <div class="instagram-gallery">
+          <!-- 프로필 헤더 -->
+          <div class="instagram-header">
+            <div class="profile-info">
+              <div class="profile-icon">
+                <img src="gallery-main-image.jpg" alt="프로필 사진" />
+              </div>
+              <div class="profile-name">Groom & Bride</div>
+            </div>
+            <div class="more-options">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="12" cy="4" r="1.5" fill="currentColor" />
+                <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+                <circle cx="12" cy="20" r="1.5" fill="currentColor" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- 갤러리 이미지 -->
+          <div class="instagram-image-container">
+            <img
+              src="photo/DSC01098-compressed-compressed.jpg"
+              alt="신랑 신부 결혼사진"
+              class="instagram-image"
+            />
+          </div>
+
+          <!-- 액션 버튼 -->
+          <div class="instagram-actions">
+            <div class="left-actions">
+              <button class="action-btn like-btn">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <button class="action-btn comment-btn">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <button class="action-btn share-btn">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <polyline
+                    points="16 6 12 2 8 6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <line
+                    x1="12"
+                    y1="2"
+                    x2="12"
+                    y2="15"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="right-actions">
+              <button class="action-btn save-btn">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <polyline
+                    points="17 21 17 13 7 13 7 21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <polyline
+                    points="7 3 7 8 15 8"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- 좋아요 수 -->
+          <div class="likes-count">
+            <span class="like-heart">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  fill="#e74c3c"
+                />
+              </svg>
+            </span>
+            <span>532 Likes</span>
+          </div>
+
+          <!-- 캡션 -->
+          <div class="instagram-caption">
+            <span class="caption-text">Happy Wedding Day</span>
+            <p>we are getting married</p>
+          </div>
+
+          <!-- 날짜 -->
+          <div class="post-date">2025.10.26</div>
+        </div>
+      </section>
+
+      <!-- 네 번째 페이지: 초대 메시지 -->
+      <section id="page4" class="page">
+        <div class="invitation-message">
+          <div class="invitation-title">Invite you</div>
+          <div class="formal-invitation">
+            저희 두 사람이 평생을 함께하기 위해 서로의 반려자가 되려 합니다.
+            <br /><br />
+            그 진실한 서약을 하는 자리에 소중한 분들을 모십니다.
+            <br /><br />
+            자리하시어 축복해 주시면 대단히 감사하겠습니다.
+            <br /><br /><br />
+          </div>
+          <button class="rsvp-btn">연락하기</button>
+        </div>
+      </section>
+
+      <!-- 다섯 번째 페이지: 일정 -->
+      <section id="page5" class="">
+        <div class="schedule-section">
+          <div class="couple-images">
+            <div class="groom-image-container">
+              <img src="gen.png" alt="신랑 사진" class="couple-single-image" />
+            </div>
+            <div class="couple-heart">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="heart-icon w-6 h-6 heart-icon-update"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                ></path>
+              </svg>
+            </div>
+            <div class="bride-image-container">
+              <img src="lady.png" alt="신부 사진" class="couple-single-image" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 여섯 번째 페이지: 카운트다운 -->
+      <section id="page6" class="">
+        <div class="countdown-section">
+          <div class="schedule-title">Calendar</div>
+          <div class="wedding-details countdown-details">
+            2025년 10월 26일 일요일 오후 2시<br />
+            서울시 영등포구 신길로 89 베뉴비안
+          </div>
+          <div class="calendar-container countdown-calendar">
+            <div class="calendar-days">
+              <div class="calendar-day">일</div>
+              <div class="calendar-day">월</div>
+              <div class="calendar-day">화</div>
+              <div class="calendar-day">수</div>
+              <div class="calendar-day">목</div>
+              <div class="calendar-day">금</div>
+              <div class="calendar-day">토</div>
+            </div>
+            <div class="calendar-dates">
+              <div class="calendar-date"></div>
+              <div class="calendar-date"></div>
+              <div class="calendar-date">1</div>
+              <div class="calendar-date">2</div>
+              <div class="calendar-date">3</div>
+              <div class="calendar-date">4</div>
+              <div class="calendar-date">5</div>
+              <div class="calendar-date">6</div>
+              <div class="calendar-date">7</div>
+              <div class="calendar-date">8</div>
+              <div class="calendar-date">9</div>
+              <div class="calendar-date">10</div>
+              <div class="calendar-date">11</div>
+              <div class="calendar-date">12</div>
+              <div class="calendar-date">13</div>
+              <div class="calendar-date">14</div>
+              <div class="calendar-date">15</div>
+              <div class="calendar-date">16</div>
+              <div class="calendar-date">17</div>
+              <div class="calendar-date">18</div>
+              <div class="calendar-date">19</div>
+              <div class="calendar-date">20</div>
+              <div class="calendar-date">21</div>
+              <div class="calendar-date">22</div>
+              <div class="calendar-date">23</div>
+              <div class="calendar-date">24</div>
+              <div class="calendar-date">25</div>
+              <div class="calendar-date wedding-date-highlight">
+                26<span class="wedding-time">오후2시</span>
+              </div>
+              <div class="calendar-date">27</div>
+              <div class="calendar-date">28</div>
+              <div class="calendar-date">29</div>
+              <div class="calendar-date">30</div>
+            </div>
+          </div>
+          <div class="countdown-timer">
+            <div class="timer-item">
+              <div class="timer-value" id="days">69</div>
+              <div class="timer-label">Days</div>
+            </div>
+            <div class="timer-separator">:</div>
+            <div class="timer-item">
+              <div class="timer-value" id="hours">23</div>
+              <div class="timer-label">Hour</div>
+            </div>
+            <div class="timer-separator">:</div>
+            <div class="timer-item">
+              <div class="timer-value" id="minutes">04</div>
+              <div class="timer-label">Min</div>
+            </div>
+            <div class="timer-separator">:</div>
+            <div class="timer-item">
+              <div class="timer-value" id="seconds">40</div>
+              <div class="timer-label">Sec</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 일곱 번째 페이지: 갤러리 -->
+      <section id="page7" class="">
+        <div class="gallery-page">
+          <div class="anniversary-message">
+            성혼 ❤️ 채연의 결혼식이 70일 남았습니다.
+          </div>
+          <div class="gallery-title">Gallery</div>
+          <div class="gallery-main">
+            <!-- Swiper 슬라이더 -->
+            <div class="swiper gallery-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC00835-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC00840-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC00854-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC00873-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC00879-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC00904-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC00908-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC00920-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC00933-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC00945-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC00948-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC00952-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC00959-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC00961-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC00979-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC00989-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC00990-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC00997-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC01036-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC01048-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC01052-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC01068-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC01070-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC01081-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC01087-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC01091-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC01098-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC01105-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC09395-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC09422-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC09433-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC09437-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="photo/DSC09439-compressed-compressed.jpg"
+                    alt="갤러리 이미지"
+                    class="gallery-main-image"
+                  />
+                </div>
+              </div>
+              <!-- 네비게이션 화살표 -->
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <!-- 페이지네이션 -->
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 여덟 번째 페이지: 위치 -->
+      <section id="page8" class="">
+        <div class="location-section">
+          <div class="location-address">
+            <div class="address-main">오시는 길</div>
+            <div class="address-details">
+              서울시 영등포구 신길로 89 베뉴비안(구 백악관) 2층 에메랄드 홀<br />
+              신풍역 4번출구 도보 5분
+            </div>
+            <button class="address-button">주소 복사</button>
+          </div>
+          <div class="location-map">
+            <div
+              class="map-container"
+              style="
+                height: 400px;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+              "
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.123456789012!2d126.9123!3d37.4985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDI5JzU0LjYiTiAxMjbCsDU0JzQzLjIiRQ!5e0!3m2!1sko!2skr!4v1710811046246!5m2!1sko!2skr"
+                width="100%"
+                height="100%"
+                style="border: 0"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="영등포구 신길로 89 베뉴비안 위치"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 아홉 번째 페이지: 교통 -->
+      <section id="page9" class="page">
+        <div class="transport-section">
+          <div class="transport-options">
+            <div class="transport-type">
+              <div class="transport-icon"><i class="fas fa-bus"></i></div>
+              <div class="transport-name">버스</div>
+              <ul class="transport-details">
+                <li>
+                  신풍역 정류장 하차 후 도보 5분
+                  <ul class="transport-subdetails">
+                    <li>
+                      <span class="transport-line blue"
+                        >간선버스: 160, 503, 505, 507</span
+                      >
+                    </li>
+                    <li>
+                      <span class="transport-line green"
+                        >지선버스: 5615, 5618, 6623</span
+                      >
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="transport-type">
+              <div class="transport-icon"><i class="fas fa-subway"></i></div>
+              <div class="transport-name">지하철</div>
+              <ul class="transport-details">
+                <li>
+                  <span class="transport-line orange"
+                    >7호선 신풍역 4번 출구 도보 5분</span
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="transport-type">
+              <div class="transport-icon"><i class="fas fa-car"></i></div>
+              <div class="transport-name">자가용</div>
+              <ul class="transport-details">
+                <li>·네이버지도: "베뉴비안" 검색</li>
+                <li>·주소 검색: "서울시 영등포구 신길로 89" 검색</li>
+                <li>·주소 검색: "서울시 영등포구 신길로 89" 검색</li>
+                <li>강남방면: 여의대로 → 신길로 → 베뉴비안</li>
+                <li>용산방면: 한강대로 → 신길로 → 베뉴비안</li>
+                <li>인천방면: 서해안고속도로 → 신길로 → 베뉴비안</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Swiper 라이브러리 추가 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
