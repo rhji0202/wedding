@@ -581,7 +581,7 @@ html {
 
 .wedding-details {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   line-height: 1.8;
   color: #333;
   margin-bottom: 2rem;
@@ -1083,7 +1083,7 @@ html {
 }
 
 .address-details {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   line-height: 1.6;
   color: #555;
 }
@@ -1315,8 +1315,6 @@ html {
   text-align: center;
 }
 .countdown-details {
-  font-size: 1rem;
-  line-height: 1.5;
   margin-bottom: 1rem;
 }
 .countdown-calendar {
