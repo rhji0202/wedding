@@ -194,25 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const galleryMainImage = document.querySelector(".gallery-main-image");
 
   // Set background images for gallery thumbnails
-  const galleryImages = [
-    "photo/DSC00854-compressed-compressed.jpg",
-    "photo/DSC00873-compressed-compressed.jpg",
-    "photo/DSC00879-compressed-compressed.jpg",
-    "photo/DSC00920-compressed-compressed.jpg",
-    "photo/DSC00948-compressed-compressed.jpg",
-    "photo/DSC00952-compressed-compressed.jpg",
-    "photo/DSC00997-compressed-compressed.jpg",
-    "photo/DSC01036-compressed-compressed.jpg",
-    "photo/DSC01048-compressed-compressed.jpg",
-    "photo/DSC01068-compressed-compressed.jpg",
-    "photo/DSC01081-compressed-compressed.jpg",
-    "photo/DSC01091-compressed-compressed.jpg",
-    "photo/DSC01105-compressed-compressed.jpg",
-    "photo/DSC09395-compressed-compressed.jpg",
-    "photo/DSC09422-compressed-compressed.jpg",
-    "photo/DSC09433-compressed-compressed.jpg",
-    "photo/DSC09439-compressed-compressed.jpg",
-  ];
+  const galleryImages = [];
 
   // Set the first image as main image
   if (galleryMainImage && galleryImages.length > 0) {
